@@ -21,7 +21,7 @@ static void grep_stream(const char *searchterm, FILE *fp) {
 // Jos ei hakusanaa niin virhe
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printf("my-grep: hakutermi[tiedosto ...]\n");
+        printf("my-grep: seaechterm[file ...]\n");
         exit(1);
     }
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     for (int i = 2; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL) {
-            printf("my-grep: ei voi avata tiedostoa\n");
+            printf("my-grep: cannot open file\n");
             exit(1);
         }
 
