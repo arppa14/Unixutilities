@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         FILE *fp = fopen(argv[i], "r");
 
         if (fp == NULL) {
-            printf("my-cat: ei voi avata tiedostoa\n");
+            printf("my-cat: cannot open file\n");
             exit(1);
         }
 
