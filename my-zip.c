@@ -1,22 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// RLE-pakkaus, joka laskee peräkkäiset merkit, esim aaabbbccc
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printf("my-zip: tiedosto1 [tiedosto2 ...]\n");
+        printf("my-zip: file1 [file2 ...]\n");
         exit(1);
     }
 
     int prev = EOF;
     int count = 0;
 
+    // Tiedostojen läpikäynti yks kerrallaan
     for (int i = 1; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL) {
-            printf("my-zip: ei voi avata tiedostoa tiedosto\n");
+            printf("my-zip: cannot open file\n");
             exit(1);
         }
 
+        // Lukeminen yks merkki kerrallaan
         int c;
         while ((c = fgetc(fp)) != EOF) {
             if (prev == EOF) {
@@ -36,7 +39,7 @@ int main(int argc, char *argv[]) {
 
         fclose(fp);
     }
-
+    // Viiminen ajo pitää vielä kirjottaa lopussa
     if (prev != EOF) {
         char ch = (char)prev;
         fwrite(&count, sizeof(int), 1, stdout);
