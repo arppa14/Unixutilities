@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 // Stackoverflow keskusteluista getline käyttö
+// Linux man-sivut apuna
 // Luetaan syöte rivi kerrrallaan ja tulostetaan osumat
 static void grep_stream(const char *searchterm, FILE *fp) {
     char *line = NULL;
