@@ -1,0 +1,1 @@
+Nämä tiedostot sisältävät kahden yleisesti käytetyn Unix-toiminnon koodit, cat ja grep. My-cat lukee tiedoston ja tulostaa sen. My-grep etsii syötetyn hakusanan tiedostosta ja tulostaa rivit joissa se esiintyy, jos hakusanaa ei löydy niin siitä tulee ilmoitus. 
